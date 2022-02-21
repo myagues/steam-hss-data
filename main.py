@@ -306,7 +306,7 @@ if __name__ == "__main__":
             clean_and_normalize(subset=subset_)
         elif args.process == "parse_current_month":
             parse_current_month(subset=subset_)
-            time.sleep(_RETRY_SLEEP)
+            time.sleep(1)
 
     if args.subset == "all" and args.process == "generate_output":
         if Path("steam_hw_survey_old.parquet").exists():

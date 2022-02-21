@@ -1,0 +1,40 @@
+name: build
+on:
+  schedule:
+    - cron: 0 2 15 * *
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: docker.io/library/python:3.10
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+            
+      - name: Install dependencies
+        run: pip install -r ./requirements.txt
+
+      - name: Get current data
+        run: python main.py --subset=all --process=parse_current_month
+        
+      - name: Get previous data file
+        uses: dsaltares/fetch-gh-release-asset@master
+        with:
+          version: tags/latest
+          file: steam_hw_survey.parquet
+          target: steam_hw_survey_old.parquet
+          
+      - name: Gen new file
+        run: python main.py --subset=all --process=generate_output
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: latest
+          files: steam_hw_survey.parquet
