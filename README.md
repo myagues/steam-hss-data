@@ -23,6 +23,14 @@ This repository provides the scripts for collecting historical data from the [St
 
 The front-end of the page has been changing over the years, and categories displayed have been appearing and disappearing, depending on technology trends or page format. Since it is a running process over almost [two decades](https://arstechnica.com/uncategorized/2004/09/4233-2), spanning a wide range of different systems, some reporting errors have been solved over time, but some cleaning still needs to be done when working with the dataset. This repository relies on two different parsers, for the old version of the survey and the current one, that extract data from different categories and platforms, and save it with [long-form](https://seaborn.pydata.org/tutorial/data_structure.html#long-form-vs-wide-form-data) in a [Parquet](https://parquet.apache.org/documentation/latest) file.
 
+In the [Releases](https://github.com/myagues/steam-hss-data/releases) category you will find a file that contains all the data extracted from the Wayback Machine up until setting up this repo, [2021.12](https://github.com/myagues/steam-hss-data/releases/tag/2021.12), so you do not need to rebuild the dataset for using it, unless you want to make changes to the extraction procedures.
+
+With [GitHub Actions](https://github.com/features/actions) new data gets added to the [latest](https://github.com/myagues/steam-hss-data/releases/tag/latest) release, containing data from the Wayback Machine and up to date values extracted from the web.
+
+You can also explore the Jupyter Notebook with [Google Colab](https://colab.research.google.com/).
+
+[![Open data in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/myagues/steam-hss-data/blob/main/plot_categories_example.ipynb)
+
 <a name="inst" />
 
 ## Installation
@@ -124,7 +132,7 @@ __May 2012__
 
 > Why do many of the Steam Hardware Survey numbers seem to undergo a significant change in April 2012?
 >
-> There was a bug introduced into Steam's survey code several months ago that caused a bias toward older systems. Specifically, only systems that had run the survey prior to the introduction of the bug would be asked to run the survey again. This caused brand new systems to never run the survey. In March 2012, we caught the bug, causing the survey to be run on a large number of new computers, thus giving us a more accurate survey and causing some of the numbers to vary more than they normally would month-to-month. Some of the most interesting changes revealed by this correction were the increased OS share of Windows 7 (as Vista fell below XP), the rise of Intel as a graphics provider and the overall diversification of Steam worldwide (as seen in the increase of non-English language usage, particularly Russian). 
+> There was a bug introduced into Steam's survey code several months ago that caused a bias toward older systems. Specifically, only systems that had run the survey prior to the introduction of the bug would be asked to run the survey again. This caused brand new systems to never run the survey. In March 2012, we caught the bug, causing the survey to be run on a large number of new computers, thus giving us a more accurate survey and causing some of the numbers to vary more than they normally would month-to-month. Some of the most interesting changes revealed by this correction were the increased OS share of Windows 7 (as Vista fell below XP), the rise of Intel as a graphics provider and the overall diversification of Steam worldwide (as seen in the increase of non-English language usage, particularly Russian).
 
 __February 2018__
 
