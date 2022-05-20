@@ -27,7 +27,7 @@ In the [Releases](https://github.com/myagues/steam-hss-data/releases) category y
 
 With [GitHub Actions](https://github.com/features/actions) new data gets added to the [latest](https://github.com/myagues/steam-hss-data/releases/tag/latest) release, containing data from the Wayback Machine and up to date values extracted from the web.
 
-You can also explore the Jupyter Notebook with [Google Colab](https://colab.research.google.com/).
+You can also explore the Jupyter Notebook with [Google Colab](https://colab.research.google.com/). If you are more comfortable with JS, you can load the dataset in [Observable](https://observablehq.com) and do some [exploration](https://observablehq.com/@myagues/trends-from-the-steam-hardware-software-survey).
 
 [![Open data in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/myagues/steam-hss-data/blob/main/plot_categories_example.ipynb)
 
